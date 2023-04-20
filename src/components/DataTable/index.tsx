@@ -11,7 +11,8 @@ const DataTable: React.FC<Props> = ({ addressList }) => {
         <table className="table table-bordered table-hover">
           <thead>
             <tr>
-              <th scope="col">UUID</th>
+              <th scope="col">Sr.</th>
+              {/* <th scope="col">UUID</th> */}
               <th scope="col">Postleitzahl</th>
               <th scope="col">Gemeindeteil Name</th>
               <th scope="col">Gemeinde Name</th>
@@ -20,9 +21,10 @@ const DataTable: React.FC<Props> = ({ addressList }) => {
             </tr>
           </thead>
           <tbody>
-            {addressList?.map((item: Address) => (
+            {addressList?.map((item: Address, index: number) => (
               <tr key={item.uuid}>
-                <td>{item.uuid}</td>
+                <td>{index + 1}</td>
+                {/* <td>{item.uuid}</td> */}
                 <td>{item.postleitzahl}</td>
                 <td>{item.gemeindeteil_name}</td>
                 <td>{item.gemeinde_name}</td>
